@@ -1,0 +1,207 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .search-container {
+  padding: 1rem;
+}
+header .search-container input[type=search] {
+  padding: 0.25rem 0.5rem;
+}
+header .search-container button {
+  padding: 0.25rem;
+}
+header .new-task-btn {
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+  align-self: flex-end;
+  margin: 1rem;
+  border: none;
+  padding: 0.25rem 1rem;
+  border: 2px solid white;
+  border-radius: 5rem;
+  color: black;
+  cursor: pointer;
+  background-color: #fff;
+}
+header .new-task-btn:hover {
+  background-color: #eee;
+}
+header .new-task-btn:active {
+  background-color: #ddd;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+.tasks-container {
+  max-width: 1000px;
+}
+.tasks-container .no-tasks-text {
+  text-align: center;
+}
+.tasks-container .tasks-list {
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.tasks-container .tasks-list .tasks {
+  position: relative;
+  width: clamp(300px, 70%, 600px);
+  list-style: none;
+  padding: 1rem;
+  margin: auto;
+  display: block;
+  outline: 2px solid #666;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  transition: outline 250ms linear;
+}
+.tasks-container .tasks-list .tasks.done {
+  outline: 2px solid lime;
+}
+.tasks-container .tasks-list .tasks .task-props-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+.tasks-container .tasks-list .tasks .task-props-container .done-btn {
+  border: none;
+  margin: 0.25rem 0;
+  background: #444;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+}
+.tasks-container .tasks-list .tasks .task-props-container .deadline {
+  font-size: 0.8rem;
+}
+.tasks-container .tasks-list .tasks .del-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0 1rem;
+  translate: -50% -50%;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  visibility: hidden;
+  opacity: 0;
+  transition-property: visibility, opacity;
+  transition-duration: 150ms;
+}
+.tasks-container .tasks-list .tasks:hover .del-btn {
+  visibility: visible;
+  opacity: 1;
+}
+
+.new-task-form-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 200ms ease-in-out, opacity 200ms ease-in-out;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.1333333333);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+.new-task-form-container.show {
+  visibility: visible;
+  opacity: 1;
+}
+.new-task-form-container form {
+  position: relative;
+  width: clamp(300px, 50%, 400px);
+  border: 1px solid white;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  background-color: #222;
+  box-shadow: 0px 0px 10px #fff;
+}
+.new-task-form-container form .form-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.new-task-form-container form .form-group label {
+  font-size: 0.85rem;
+}
+.new-task-form-container form .form-group input {
+  width: 100%;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.25rem;
+  background-color: #555;
+}
+.new-task-form-container form .form-group input::-moz-placeholder {
+  color: #999;
+}
+.new-task-form-container form .form-group input::placeholder {
+  color: #999;
+}
+.new-task-form-container form .form-group .submit-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  border: none;
+  display: block;
+  margin: 0 auto;
+  width: -moz-fit-content;
+  width: fit-content;
+  cursor: pointer;
+  color: black;
+  outline-offset: 2px;
+  background-color: #fff;
+}
+.new-task-form-container form .form-group .submit-btn:hover {
+  background-color: #eee;
+}
+.new-task-form-container form .form-group .submit-btn:active {
+  background-color: #ddd;
+}
+.new-task-form-container form .close-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  translate: 0 -200%;
+  font-size: 1.5rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
+.new-task-form-container form .close-btn:hover {
+  color: #eee;
+}
+.new-task-form-container form .close-btn:active {
+  color: #ddd;
+}/*# sourceMappingURL=Dashboard.css.map */
